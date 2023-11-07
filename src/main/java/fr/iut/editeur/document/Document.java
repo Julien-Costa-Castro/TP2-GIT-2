@@ -43,4 +43,8 @@ public class Document {
         texte = texte.substring(0, start) + texte.substring(end);
     }
 
+    public void clear() {
+        texte = "a";
+    }
+
 }
