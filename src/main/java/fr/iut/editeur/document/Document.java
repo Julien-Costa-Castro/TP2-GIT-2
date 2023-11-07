@@ -29,12 +29,14 @@ public class Document {
         String leftPart = texte.substring(0, start);
         String rightPart = texte.substring(end);
         texte = leftPart + remplacement + rightPart;
+        if (texte.length() > 0 && texte.charAt(texte.length() - 1) != '\n') {
+            texte += '\n';
+        }
     }
 
     public void majuscules(int start, int end) {
-        String leftPart = texte.substring(0, start);
-        String rightPart = texte.substring(end);
-        String toUpper = texte.substring(start, end).toUpperCase();
-        texte = leftPart + toUpper + rightPart;
+        texte = texte.substring(0, start) + texte.substring(start, end).toUpperCase() + texte.substring(end);
+        remplacer(start, end, texte.substring(start, end).toUpperCase());
     }
+
 }
