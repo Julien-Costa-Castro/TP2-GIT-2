@@ -39,4 +39,8 @@ public class Document {
         remplacer(start, end, texte.substring(start, end).toUpperCase());
     }
 
+    public void effacer(int start, int end) {
+        texte = texte.substring(0, start) + texte.substring(end);
+    }
+
 }
